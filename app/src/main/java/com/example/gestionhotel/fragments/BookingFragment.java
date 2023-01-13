@@ -1,4 +1,4 @@
-package com.example.gestionhotel;
+package com.example.gestionhotel.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.gestionhotel.R;
 import com.google.android.material.button.MaterialButton;
 
 /**

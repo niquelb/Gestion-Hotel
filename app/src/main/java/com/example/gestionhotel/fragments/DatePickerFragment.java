@@ -1,4 +1,4 @@
-package com.example.gestionhotel;
+package com.example.gestionhotel.fragments;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.gestionhotel.R;
 import com.google.android.material.button.MaterialButton;
 
 /**

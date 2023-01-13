@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.gestionhotel.fragments.BookingFragment;
+import com.example.gestionhotel.fragments.DatePickerFragment;
+import com.example.gestionhotel.fragments.MainMenuFragment;
+
 /**
  * Main Class of the app
  */
