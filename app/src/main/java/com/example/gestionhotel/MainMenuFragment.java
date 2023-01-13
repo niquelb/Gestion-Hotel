@@ -38,6 +38,22 @@ public class MainMenuFragment extends Fragment {
             }
         });
 
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CharSequence input="about";
+                listener.onInputSent(input);
+            }
+        });
+
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CharSequence input="location";
+                listener.onInputSent(input);
+            }
+        });
+
         return v;
     }
 

@@ -8,6 +8,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements MainMenuFragment.MainMenuFragmentListener {
 
     private MainMenuFragment mMFragment;
+    private BookingFragment bookingFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,18 @@ public class MainActivity extends AppCompatActivity implements MainMenuFragment.
 
     @Override
     public void onInputSent(CharSequence input) {
-        Toast.makeText(MainActivity.this,input,Toast.LENGTH_LONG).show();
+        if (input.toString().equals("book")) {
+
+            bookingFragment=new BookingFragment();
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.mainFLayout, bookingFragment).commit();
+        } else if (input.toString().equals("about")) {
+            // Reemplazar mainFLayout por el fragment correspondiente
+        } else if (input.toString().equals("location")) {
+            // Reemplazar mainFLayout por el fragment correspondiente
+        } else throw new RuntimeException("onInputSent Exception on MainActivity: couldn't resolve input origin.");
+
+        Toast.makeText(MainActivity.this,input,Toast.LENGTH_SHORT).show();
     }
 }

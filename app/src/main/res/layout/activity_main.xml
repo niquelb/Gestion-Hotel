@@ -11,18 +11,17 @@
         android:id="@+id/mainTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:gravity="center"
         android:text="AC Hotel Almeria"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="40dp"
-        android:layout_margin="50dp"
-         />
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <FrameLayout
         android:id="@+id/mainFLayout"
-        android:layout_width="306dp"
-        android:layout_height="453dp"
+        android:layout_width="299dp"
+        android:layout_height="548dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="147dp">
