@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenuFragment">
+
+   <LinearLayout
+       android:id="@+id/mainMenuLL"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin="50dp"
+       android:orientation="vertical">
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/mainMenuBookBtn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="50dp"
+           android:text="RESERVAR"
+           android:backgroundTint="#524167"
+           android:textStyle="bold"
+           />
+
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/mainMenuAboutBtn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="50dp"
+           android:text="QUIENES SOMOS"
+           android:backgroundTint="#524167"
+           android:textStyle="bold"
+           />
+
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/mainMenuLocationBtn"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="50dp"
+           android:text="DONDE ESTAMOS"
+           android:backgroundTint="#524167"
+           android:textStyle="bold"
+           />
+   </LinearLayout>
+
+</FrameLayout>
