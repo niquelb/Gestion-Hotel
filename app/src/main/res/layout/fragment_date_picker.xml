@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DatePickerFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fechaBtn"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="FECHA"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:backgroundTint="#524167"
+                 />
+
+            <TextView
+                android:id="@+id/fechaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sin Fecha Seleccionada"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/horaBtn"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="HORA"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:backgroundTint="#524167"
+                 />
+
+            <TextView
+                android:id="@+id/horaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sin Hora Seleccionada"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitTimePickerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="CONFIRMAR"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:backgroundTint="#524167"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
+/**
+ * Activity for logging into the app
+ */
 public class Login extends AppCompatActivity {
 
     @Override

@@ -12,13 +12,15 @@ import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
 
+/**
+ * Main menu of the app, accessed after logging in
+ */
 public class MainMenuFragment extends Fragment {
 
     private MainMenuFragmentListener listener;
 
     public interface MainMenuFragmentListener {
         void onInputSent(CharSequence input);
-
     }
 
     @Override
@@ -30,28 +32,19 @@ public class MainMenuFragment extends Fragment {
         MaterialButton aboutBtn=(MaterialButton) v.findViewById(R.id.mainMenuAboutBtn);
         MaterialButton locationBtn=(MaterialButton) v.findViewById(R.id.mainMenuLocationBtn);
 
-        bookBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CharSequence input="book";
-                listener.onInputSent(input);
-            }
+        bookBtn.setOnClickListener(view -> {
+            CharSequence input="book";
+            listener.onInputSent(input);
         });
 
-        aboutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CharSequence input="about";
-                listener.onInputSent(input);
-            }
+        aboutBtn.setOnClickListener(view -> {
+            CharSequence input="about";
+            listener.onInputSent(input);
         });
 
-        locationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CharSequence input="location";
-                listener.onInputSent(input);
-            }
+        locationBtn.setOnClickListener(view -> {
+            CharSequence input="location";
+            listener.onInputSent(input);
         });
 
         return v;
@@ -62,7 +55,7 @@ public class MainMenuFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof MainMenuFragmentListener){
             listener=(MainMenuFragmentListener) context;
-        } else throw new RuntimeException(context.toString()+" must implement MainMenuFragmentListener.");
+        } else throw new RuntimeException(context +" must implement MainMenuFragmentListener.");
     }
 
     @Override
