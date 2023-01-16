@@ -8,8 +8,6 @@ import androidx.room.Update;
 
 import com.example.gestionhotel.data.entities.Usuario;
 
-import java.util.List;
-
 @Dao
 public interface UsuarioDao {
     @Insert
@@ -20,4 +18,7 @@ public interface UsuarioDao {
 
     @Query("SELECT * FROM usuarios WHERE email = :miEmail AND password=:miPass LIMIT 1")
     public LiveData<Usuario> getOne(String miEmail, String miPass);
+
+    @Query("SELECT * FROM usuarios WHERE email = :miEmail LIMIT 1")
+    public LiveData<Usuario> getOne(String miEmail);
 }

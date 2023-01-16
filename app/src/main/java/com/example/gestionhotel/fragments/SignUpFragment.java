@@ -4,7 +4,10 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gestionhotel.R;
+import com.example.gestionhotel.data.viewmodels.UserViewModel;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.regex.Pattern;
@@ -30,6 +34,14 @@ public class SignUpFragment extends Fragment {
     }
 
     private SignUpFragmentListener listener;
+    private UserViewModel userViewModel;
+    private boolean checkEmailBool;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        userViewModel =new ViewModelProvider(this).get(UserViewModel.class);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,11 +54,25 @@ public class SignUpFragment extends Fragment {
         TextView errMsg=(TextView) v.findViewById(R.id.signUpErrTV);
         MaterialButton submit=(MaterialButton) v.findViewById(R.id.signUpBtn1);
 
+
         submit.setOnClickListener(view -> {
+
             if (validateUName(email.getText().toString())
                 && passwd.getText().toString().equals(passwd2.getText().toString())
-                && validatePassword(passwd.getText().toString()))
-                listener.onSubmit1(email.getText().toString(),passwd.getText().toString());
+                && validatePassword(passwd.getText().toString())) {
+
+                userViewModel.getUsuario(email.getText().toString())
+                        .observe((LifecycleOwner) v.getContext(),
+                        checkEmail -> {
+                            if (checkEmail!=null) {
+                                checkEmailBool=true;
+                            } else checkEmailBool=false;
+                            if (checkEmailBool) {
+                                errMsg.setText("Este email ya esta registrado, por favor, introduce otro.");
+                            } else
+                                listener.onSubmit1(email.getText().toString(),passwd.getText().toString());
+                        });
+            }
             else {
                 Toast.makeText(v.getContext(), "Los datos son incorrectos", Toast.LENGTH_SHORT).show();
                 errMsg.setText("Asegurate que los datos cumplan con las siguientes guias:" +

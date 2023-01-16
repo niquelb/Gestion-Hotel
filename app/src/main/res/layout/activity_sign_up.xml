@@ -8,7 +8,7 @@
     tools:context=".SignUp">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/signUpFragmentContainer"
         android:name="com.example.gestionhotel.fragments.SignUpFragment"
         android:layout_width="match_parent"
         android:layout_height="674dp"

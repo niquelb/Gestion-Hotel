@@ -3,7 +3,6 @@ package com.example.gestionhotel.data;
 import android.content.Context;
 
 import androidx.room.Database;
-import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.gestionhotel.data.daos.HabitacionDao;
@@ -31,7 +30,7 @@ public abstract class AppDB extends RoomDatabase {
         if (INSTANCE == null) {
             synchronized (AppDB.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(
+                    INSTANCE = androidx.room.Room.databaseBuilder(
                                     context.getApplicationContext(), AppDB.class,
                                     DATABASE_NAME)
                             .build();

@@ -10,14 +10,14 @@ import com.example.gestionhotel.data.entities.Habitacion;
 
 import java.util.List;
 
-public class HabitacionRepository {
+public class RoomRepository {
 
     private HabitacionDao habitacionDao;
 
     private LiveData<List<Habitacion>> listado_habitaciones;
     private Habitacion mihabitacion;
 
-    public HabitacionRepository(Context context){
+    public RoomRepository(Context context){
         AppDB db = AppDB.getInstance(context);
         habitacionDao = db.habitacionDao();
         listado_habitaciones = habitacionDao.getAll();

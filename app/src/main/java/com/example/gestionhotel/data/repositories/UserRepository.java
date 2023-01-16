@@ -8,11 +8,11 @@ import com.example.gestionhotel.data.AppDB;
 import com.example.gestionhotel.data.daos.UsuarioDao;
 import com.example.gestionhotel.data.entities.Usuario;
 
-public class UsuarioRepository {
+public class UserRepository {
 
     private UsuarioDao usuarioDao;
 
-    public UsuarioRepository(Context context){
+    public UserRepository(Context context){
         AppDB db= AppDB.getInstance(context);
         usuarioDao=db.usuarioDao();
     }
@@ -31,6 +31,10 @@ public class UsuarioRepository {
 
     public LiveData<Usuario> getOne(String mEmail, String password){
         return usuarioDao.getOne(mEmail, password);
+    }
+
+    public LiveData<Usuario> getOne(String mEmail){
+        return usuarioDao.getOne(mEmail);
     }
 
 }

@@ -7,17 +7,17 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.gestionhotel.data.entities.Habitacion;
-import com.example.gestionhotel.data.repositories.HabitacionRepository;
+import com.example.gestionhotel.data.repositories.RoomRepository;
 
 import java.util.List;
 
-public class HabitacionViewModel extends AndroidViewModel {
-    private final HabitacionRepository hRepo;
+public class RoomViewModel extends AndroidViewModel {
+    private final RoomRepository hRepo;
     private final LiveData<List<Habitacion>> listadoHabitaciones;
 
-    public HabitacionViewModel(@NonNull Application application) {
+    public RoomViewModel(@NonNull Application application) {
         super(application);
-        this.hRepo = new HabitacionRepository(application);
+        this.hRepo = new RoomRepository(application);
         this.listadoHabitaciones = hRepo.getAllR();
     }
 
