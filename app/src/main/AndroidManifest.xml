@@ -14,8 +14,11 @@
         android:theme="@style/Theme.GestionHotel"
         tools:targetApi="31">
         <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="true">

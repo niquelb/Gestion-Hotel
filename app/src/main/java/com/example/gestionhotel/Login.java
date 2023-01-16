@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gestionhotel.data.viewmodels.UsuarioViewModel;
@@ -34,18 +35,21 @@ public class Login extends AppCompatActivity {
 
         EditText uName=(EditText) findViewById(R.id.uNameET);
         EditText passwd=(EditText) findViewById(R.id.pwdET);
+        TextView noAccount=(TextView) findViewById(R.id.noAccountTV);
 
         MaterialButton loginBtn=(MaterialButton) findViewById(R.id.loginBtn);
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (uName.getText().toString().equals("admin") && passwd.getText().toString().equals("admin")){
-                    Intent i=new Intent(Login.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
-                } else Toast.makeText(Login.this,"Login Incorrecto",Toast.LENGTH_LONG).show();
-            }
+        loginBtn.setOnClickListener(view -> {
+            if (uName.getText().toString().equals("admin") && passwd.getText().toString().equals("admin")){
+                Intent i=new Intent(Login.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            } else Toast.makeText(Login.this,"Login Incorrecto",Toast.LENGTH_LONG).show();
         });
+
+        noAccount.setOnClickListener(view -> {
+            Intent i=new Intent(Login.this, SignUp.class);
+            startActivity(i);
+        } );
     }
 }
