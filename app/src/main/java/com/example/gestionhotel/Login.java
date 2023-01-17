@@ -1,5 +1,7 @@
 package com.example.gestionhotel;
 
+import static com.example.gestionhotel.EmailPasswordChecker.validateUName;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -33,19 +35,24 @@ public class Login extends AppCompatActivity {
         EditText uName=(EditText) findViewById(R.id.uNameET);
         EditText passwd=(EditText) findViewById(R.id.pwdET);
         TextView noAccount=(TextView) findViewById(R.id.noAccountTV);
+        TextView err=(TextView) findViewById(R.id.loginErrTV);
 
         MaterialButton loginBtn=(MaterialButton) findViewById(R.id.loginBtn);
 
         loginBtn.setOnClickListener(view -> {
-            uViewModel.getUsuario(uName.getText().toString(),passwd.getText().toString())
-                    .observe(this,
-                            checkUser -> {
-                                if (checkUser!=null) {
-                                    Intent i=new Intent(Login.this, MainActivity.class);
-                                    startActivity(i);
-                                    finish();
-                                } else Toast.makeText(Login.this,"Login Incorrecto",Toast.LENGTH_LONG).show();
-                            });
+
+            if (validateUName(uName.getText().toString())) {
+                uViewModel.getUsuario(uName.getText().toString(),passwd.getText().toString())
+                        .observe(this,
+                                checkUser -> {
+                                    if (checkUser!=null) {
+                                        Intent i=new Intent(Login.this, MainActivity.class);
+                                        i.putExtra("id",checkUser.getEmail());
+                                        startActivity(i);
+                                        finish();
+                                    } else err.setText("Los datos introducidos no son correctos.");
+                                });
+            } else err.setText("El correo electronico no es correcto.");
         });
 
         noAccount.setOnClickListener(view -> {

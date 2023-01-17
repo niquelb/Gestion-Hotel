@@ -76,8 +76,9 @@
 
         <TextView
             android:id="@+id/signUpErrTV"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="15dp"
             android:textColor="#FF4747"
             android:textStyle="bold"

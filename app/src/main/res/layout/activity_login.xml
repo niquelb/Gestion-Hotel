@@ -88,4 +88,17 @@
         android:textColor="#524167"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/loginErrTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noAccountTV"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="#FF4747"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp"
+        />
+
 </RelativeLayout>
