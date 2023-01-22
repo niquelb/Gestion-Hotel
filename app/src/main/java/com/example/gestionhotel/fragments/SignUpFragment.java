@@ -23,8 +23,6 @@ import com.example.gestionhotel.R;
 import com.example.gestionhotel.data.viewmodels.UserViewModel;
 import com.google.android.material.button.MaterialButton;
 
-import java.util.regex.Pattern;
-
 /**
  * Fragment responsible for the first step
  * of the signup process,
@@ -64,7 +62,7 @@ public class SignUpFragment extends Fragment {
                 && passwd.getText().toString().equals(passwd2.getText().toString())
                 && validatePassword(passwd.getText().toString())) {
 
-                userViewModel.getUsuario(email.getText().toString())
+                userViewModel.getUser(email.getText().toString())
                         .observe((LifecycleOwner) v.getContext(),
                         checkEmail -> {
                             if (checkEmail!=null) {

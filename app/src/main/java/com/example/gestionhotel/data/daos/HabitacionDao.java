@@ -15,27 +15,27 @@ import java.util.List;
 public
 interface HabitacionDao {
     @Insert
-    public void insert(Habitacion habitacion);
+    void insert(Habitacion habitacion);
 
     @Insert
-    public void insertBothUsers(Habitacion hab1, Habitacion hab2);
+    void insertBothUsers(Habitacion hab1, Habitacion hab2);
 
     @Update
-    public void update(Habitacion habitacion);
+    void update(Habitacion habitacion);
 
     @Delete
-    public void delete(Habitacion habitacion);
+    void delete(Habitacion habitacion);
 
     @Query("SELECT * FROM habitaciones ORDER BY id")
-    public LiveData<List<Habitacion>> getAll();
+    LiveData<List<Habitacion>> getAll();
 
     @Query("SELECT * FROM habitaciones WHERE id = :miId")
-    public LiveData<Habitacion> getOne(String miId);
+    LiveData<Habitacion> getOne(String miId);
 
     @Query("SELECT * FROM habitaciones WHERE precio BETWEEN :minPrecio AND :maxPrecio")
-    public LiveData<List<Habitacion>> getAllPrices(int minPrecio, int maxPrecio);
+    LiveData<List<Habitacion>> getAllPrices(int minPrecio, int maxPrecio);
 
     @Query("SELECT * FROM habitaciones WHERE descrip LIKE :search ")
-    public LiveData<List<Habitacion>> findHabitacion(String search);
+    LiveData<List<Habitacion>> findHabitacion(String search);
 
 }

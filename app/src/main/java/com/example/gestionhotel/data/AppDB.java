@@ -6,18 +6,21 @@ import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
 import com.example.gestionhotel.data.daos.HabitacionDao;
+import com.example.gestionhotel.data.daos.ReservaDao;
 import com.example.gestionhotel.data.daos.UsuarioDao;
 import com.example.gestionhotel.data.entities.Habitacion;
+import com.example.gestionhotel.data.entities.Reserva;
 import com.example.gestionhotel.data.entities.Usuario;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Habitacion.class, Usuario.class}, version = 1)
+@Database(entities = {Habitacion.class, Usuario.class, Reserva.class}, version = 1)
 public abstract class AppDB extends RoomDatabase {
 
     public abstract HabitacionDao habitacionDao();
     public abstract UsuarioDao usuarioDao();
+    public abstract ReservaDao reservaDao();
 
     private static final String DATABASE_NAME = "hoteldb";
 

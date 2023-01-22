@@ -38,7 +38,7 @@ public class SignUp extends AppCompatActivity implements SignUpFragment.SignUpFr
      * @param usuario User to be saved.
      */
     public void saveUser(Usuario usuario) {
-        uViewModel.guardarUsuario(usuario);
+        uViewModel.insertUser(usuario);
 
         Intent i=new Intent(SignUp.this, Login.class);
         startActivity(i);

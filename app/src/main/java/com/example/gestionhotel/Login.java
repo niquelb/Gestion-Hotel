@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.gestionhotel.data.viewmodels.UserViewModel;
 import com.google.android.material.button.MaterialButton;
@@ -42,7 +41,7 @@ public class Login extends AppCompatActivity {
         loginBtn.setOnClickListener(view -> {
 
             if (validateUName(uName.getText().toString())) {
-                uViewModel.getUsuario(uName.getText().toString(),passwd.getText().toString())
+                uViewModel.getUser(uName.getText().toString(),passwd.getText().toString())
                         .observe(this,
                                 checkUser -> {
                                     if (checkUser!=null) {

@@ -97,10 +97,12 @@ public class MainActivity extends AppCompatActivity implements MainMenuFragment.
         this.roomId=id;
         Toast.makeText(this,"Habitacion seleccionada",Toast.LENGTH_SHORT).show();
 
+//        if (id.equals("3")) createRoom();
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.mainFLayout, mMFragment).commit();
     }
-    
+
     public void makeBooking() {}
 
     /**

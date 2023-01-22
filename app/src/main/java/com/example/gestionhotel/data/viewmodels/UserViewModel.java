@@ -17,19 +17,19 @@ public class UserViewModel extends AndroidViewModel {
         this.userRepository = new UserRepository(application);
     }
 
-    public LiveData<Usuario> getUsuario(String email, String password) {
+    public LiveData<Usuario> getUser(String email, String password) {
         return userRepository.getOne(email, password);
     }
 
-    public LiveData<Usuario> getUsuario(String email) {
+    public LiveData<Usuario> getUser(String email) {
         return userRepository.getOne(email);
     }
 
-    public void modifUsuario(Usuario usuario) {
+    public void updateUser(Usuario usuario) {
         userRepository.update(usuario);
     }
 
-    public void guardarUsuario(Usuario usuario) {
+    public void insertUser(Usuario usuario) {
         userRepository.insert(usuario);
     }
 }
