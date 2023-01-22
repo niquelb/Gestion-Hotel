@@ -1,6 +1,8 @@
 package com.example.gestionhotel.fragments;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.gestionhotel.R;
 import com.google.android.material.button.MaterialButton;
@@ -22,11 +23,26 @@ import com.google.android.material.button.MaterialButton;
 public class BookingFragment extends Fragment {
 
     private BookingFragmentListener listener;
-    private int day,month,year,hour,mins;
+    private int day,month,year;
+    private String[] date;
+    private boolean isSetDate=false, isRoomSelected=false;
 
     public interface BookingFragmentListener {
-        void onDPPressed();
-        void onBookingSubmitted(int numGuests, String observations, int day, int month, int year, int hour, int mins);
+        void onRoomSelectorPressed(int numGuests, String observations, String[] date);
+    }
+
+    private String[] onDPPressed(View view) {
+        final Calendar c= Calendar.getInstance();
+        day =c.get(Calendar.DAY_OF_MONTH);
+        month =c.get(Calendar.MONTH);
+        year =c.get(Calendar.YEAR);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(view.getContext(), (view1, yr, monthOfYear, dayOfMonth) -> {
+            day=dayOfMonth;
+            month=monthOfYear;
+            year=yr;
+        }, day, month, year);
+        datePickerDialog.show();
+        return new String[]{String.valueOf(day), String.valueOf(month), String.valueOf(year)};
     }
 
     @Override
@@ -37,15 +53,15 @@ public class BookingFragment extends Fragment {
         ImageButton datePickerIB=(ImageButton) v.findViewById(R.id.datePickerIB);
         EditText numGuests=(EditText) v.findViewById(R.id.numGuestsET);
         EditText observations=(EditText) v.findViewById(R.id.observationsET);
-        MaterialButton makeBookingBtn=(MaterialButton) v.findViewById(R.id.makeBookingBtn);
+        MaterialButton selectRoomBtn=(MaterialButton) v.findViewById(R.id.selectRoomBtn);
 
         datePickerIB.setOnClickListener(view -> {
-            listener.onDPPressed();
-
+            isSetDate=true;
+            date=onDPPressed(v);
         });
 
-        makeBookingBtn.setOnClickListener(view -> {
-            listener.onBookingSubmitted(Integer.parseInt(numGuests.getText().toString()),observations.getText().toString(),day,month,year,hour,mins);
+        selectRoomBtn.setOnClickListener(view -> {
+            listener.onRoomSelectorPressed(Integer.parseInt(numGuests.getText().toString()),observations.getText().toString(),date);
         });
 
         return v;
@@ -68,17 +84,14 @@ public class BookingFragment extends Fragment {
     /**
      * Method for setting the date and time for the reservation,
      * accessed from DatePickerFragment
+     * @deprecated
      * @param day Day of the booking
      * @param month Month of the booking
      * @param year Year of the booking
-     * @param hour Hour of the booking
-     * @param mins Minute of the booking
      */
-    public void setTimeDateParams(int day, int month, int year, int hour, int mins) {
+    public void setTimeDateParams(int day, int month, int year) {
         this.day=day;
         this.month=month;
         this.year=year;
-        this.hour=hour;
-        this.mins=mins;
     }
 }

@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Fecha y Hora:"
+                android:text="Elegir Fecha:"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:textSize="30dp"
@@ -69,10 +69,10 @@
              />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/makeBookingBtn"
+            android:id="@+id/selectRoomBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HACER RESERVA"
+            android:text="Seleccionar habitacion"
             android:backgroundTint="#524167"
             android:layout_margin="10dp"
             android:padding="5dp"

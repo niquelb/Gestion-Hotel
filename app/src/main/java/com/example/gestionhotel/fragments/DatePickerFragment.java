@@ -23,6 +23,7 @@ import com.google.android.material.button.MaterialButton;
 /**
  * Fragment responsible for the date-picking of the booking,
  * accessed from BookingFragment
+ * @deprecated
  */
 public class DatePickerFragment extends Fragment {
 
