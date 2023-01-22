@@ -50,10 +50,10 @@ public class BookingFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_booking, container, false);
 
-        ImageButton datePickerIB=(ImageButton) v.findViewById(R.id.datePickerIB);
-        EditText numGuests=(EditText) v.findViewById(R.id.numGuestsET);
-        EditText observations=(EditText) v.findViewById(R.id.observationsET);
-        MaterialButton selectRoomBtn=(MaterialButton) v.findViewById(R.id.selectRoomBtn);
+        ImageButton datePickerIB= v.findViewById(R.id.datePickerIB);
+        EditText numGuests= v.findViewById(R.id.numGuestsET);
+        EditText observations= v.findViewById(R.id.observationsET);
+        MaterialButton selectRoomBtn= v.findViewById(R.id.selectRoomBtn);
 
         datePickerIB.setOnClickListener(view -> {
             isSetDate=true;

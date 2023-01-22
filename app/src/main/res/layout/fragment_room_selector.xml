@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RoomSelectorFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp">
+
+        <LinearLayout
+            android:id="@+id/item1LLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/item1IV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item1TV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room 1"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/item1TV2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room 1 Description"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item1Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar habitacion"
+                    android:backgroundTint="#524167"
+                    android:layout_margin="10dp"
+                    android:padding="5dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item2LLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/item2IV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item2TV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room 2"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/item2TV2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room 2 Description"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item2Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar habitacion"
+                    android:backgroundTint="#524167"
+                    android:layout_margin="10dp"
+                    android:padding="5dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item3LLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/item3IV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item3TV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room 3"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/item3TV2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room 3 Description"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item3Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar habitacion"
+                    android:backgroundTint="#524167"
+                    android:layout_margin="10dp"
+                    android:padding="5dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
