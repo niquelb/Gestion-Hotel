@@ -19,10 +19,10 @@ import androidx.room.PrimaryKey;
         )
 })
 public class Reserva {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    private String id;
+    private int id;
 
     @NonNull
     @ColumnInfo(name = "fecha_in")
@@ -41,8 +41,7 @@ public class Reserva {
     @ColumnInfo(name = "id_habitacion")
     private String id_habitacion;
 
-    public Reserva(@NonNull String id, @NonNull String fecha_in, String fecha_out, String id_usuario, String id_habitacion, @NonNull int numGuests) {
-        this.id = id;
+    public Reserva(@NonNull String fecha_in, String fecha_out, String id_usuario, String id_habitacion, @NonNull int numGuests) {
         this.fecha_in = fecha_in;
         this.fecha_out = fecha_out;
         this.id_usuario = id_usuario;
@@ -51,11 +50,11 @@ public class Reserva {
     }
 
     @NonNull
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(@NonNull String id) {
+    public void setId(@NonNull int id) {
         this.id = id;
     }
 
