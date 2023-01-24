@@ -39,7 +39,7 @@
                     android:text="Room 1"
                     android:textColor="@color/white"
                     android:gravity="center"
-                    android:textSize="30dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     />
 
@@ -51,7 +51,6 @@
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="15dp"
-                    android:textStyle="bold"
                     />
 
                 <com.google.android.material.button.MaterialButton
@@ -94,7 +93,7 @@
                     android:text="Room 2"
                     android:textColor="@color/white"
                     android:gravity="center"
-                    android:textSize="30dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     />
 
@@ -106,7 +105,6 @@
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="15dp"
-                    android:textStyle="bold"
                     />
 
                 <com.google.android.material.button.MaterialButton
@@ -148,7 +146,7 @@
                     android:text="Room 3"
                     android:textColor="@color/white"
                     android:gravity="center"
-                    android:textSize="30dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     />
 
@@ -160,7 +158,6 @@
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="15dp"
-                    android:textStyle="bold"
                     />
 
                 <com.google.android.material.button.MaterialButton
@@ -175,5 +172,16 @@
 
             </LinearLayout>
         </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nextPageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Siguiente pagina"
+            android:backgroundTint="#524167"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            />
+
     </LinearLayout>
 </FrameLayout>

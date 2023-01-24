@@ -41,7 +41,7 @@ public class SignUpFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        userViewModel =new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel=new ViewModelProvider(this).get(UserViewModel.class);
     }
 
     @Override

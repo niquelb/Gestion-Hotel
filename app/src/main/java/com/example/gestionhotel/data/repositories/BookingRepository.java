@@ -12,7 +12,7 @@ import java.util.List;
 
 public class BookingRepository {
 
-    private ReservaDao reservaDao;
+    private final ReservaDao reservaDao;
 
     public BookingRepository(Context context) {
         AppDB db=AppDB.getInstance(context);

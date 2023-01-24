@@ -4,27 +4,44 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gestionhotel.R;
+import com.example.gestionhotel.data.entities.Habitacion;
+import com.example.gestionhotel.data.viewmodels.RoomViewModel;
 import com.google.android.material.button.MaterialButton;
+
+import java.util.List;
 
 
 public class RoomSelectorFragment extends Fragment {
 
     private RoomSelectorListener listener;
+    private RoomViewModel roomViewModel;
+//    private List<Habitacion> rooms;
+
     private TextView item1Title, item1Descr, item2Title, item2Descr, item3Title, item3Descr;
     private ImageView item1IV, item2IV, item3IV;
-    private MaterialButton item1Btn, item2Btn, item3Btn;
+    private MaterialButton item1Btn, item2Btn, item3Btn, nextPageBtn;
+    private short page=0;
 
     public interface RoomSelectorListener{
         void onRoomSelected(String id);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        roomViewModel=new ViewModelProvider(this).get(RoomViewModel.class);
     }
 
     @Override
@@ -51,6 +68,29 @@ public class RoomSelectorFragment extends Fragment {
         item2Btn.setOnClickListener(view -> listener.onRoomSelected("2"));
         item3Btn.setOnClickListener(view -> listener.onRoomSelected("3"));
 
+        nextPageBtn=v.findViewById(R.id.nextPageBtn);
+        nextPageBtn.setOnClickListener(view -> page++);
+
+       /* do {
+            rooms = roomViewModel.getAllRooms().getValue();
+        } while (rooms==null);*/
+
+        roomViewModel.getAllRooms().observe(getViewLifecycleOwner(),rooms->{
+            if (rooms!=null) {
+                if (rooms.size() < 4) {
+                    nextPageBtn.setVisibility(View.INVISIBLE);
+                }
+
+                item1Title.setText(rooms.get(this.page).getDescrip());
+                item1Descr.setText(String.format("%s por noche.", rooms.get(this.page).getPrecio()));
+
+                item2Title.setText(rooms.get(this.page + 1).getDescrip());
+                item2Descr.setText(String.format("%s por noche.", rooms.get(this.page + 1).getPrecio()));
+
+                item3Title.setText(rooms.get(this.page + 2).getDescrip());
+                item3Descr.setText(String.format("%s por noche.", rooms.get(this.page + 2).getPrecio()));
+            } else Toast.makeText(v.getContext(), "null", Toast.LENGTH_SHORT).show();
+            });
         return v;
     }
 

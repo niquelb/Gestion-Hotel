@@ -147,9 +147,9 @@ public class MainActivity extends AppCompatActivity implements MainMenuFragment.
         Habitacion h3=new Habitacion("3","Habitacion para 2 personas en el 3º piso, acceso facil a la piscina",
                 95.0,0);
 
-        roomViewModel.guardarHabitacion(h1);
-        roomViewModel.guardarHabitacion(h2);
-        roomViewModel.guardarHabitacion(h3);
+        roomViewModel.insertRoom(h1);
+        roomViewModel.insertRoom(h2);
+        roomViewModel.insertRoom(h3);
 
     }
 }

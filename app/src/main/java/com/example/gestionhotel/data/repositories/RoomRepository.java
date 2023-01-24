@@ -12,17 +12,15 @@ import java.util.List;
 
 public class RoomRepository {
 
-    private HabitacionDao habitacionDao;
+    private final HabitacionDao habitacionDao;
 
-    private LiveData<List<Habitacion>> listado_habitaciones;
-    private Habitacion mihabitacion;
+    private final LiveData<List<Habitacion>> listado_habitaciones;
 
     public RoomRepository(Context context){
         AppDB db = AppDB.getInstance(context);
         habitacionDao = db.habitacionDao();
         listado_habitaciones = habitacionDao.getAll();
     }
-    //Se añade un método por cada operación del DAO que deseemos realizar
 
     public void insert (Habitacion habitacion){
         AppDB.dbExecutor.execute(

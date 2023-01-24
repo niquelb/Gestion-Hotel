@@ -12,27 +12,27 @@ import com.example.gestionhotel.data.repositories.RoomRepository;
 import java.util.List;
 
 public class RoomViewModel extends AndroidViewModel {
-    private final RoomRepository hRepo;
-    private final LiveData<List<Habitacion>> listadoHabitaciones;
+    private final RoomRepository roomRepository;
+    private final LiveData<List<Habitacion>> listRooms;
 
     public RoomViewModel(@NonNull Application application) {
         super(application);
-        this.hRepo = new RoomRepository(application);
-        this.listadoHabitaciones = hRepo.getAllR();
+        this.roomRepository = new RoomRepository(application);
+        this.listRooms = roomRepository.getAllR();
     }
 
-    public LiveData<List<Habitacion>> obtenerHabitaciones(){
-        return listadoHabitaciones;
+    public LiveData<List<Habitacion>> getAllRooms(){
+        return listRooms;
     }
 
-    public LiveData<Habitacion> obtenerHabitacion(String mId){
-        return hRepo.getOne(mId);
+    public LiveData<Habitacion> getRoom(String mId){
+        return roomRepository.getOne(mId);
     }
 
-    public void guardarHabitacion(Habitacion habitacion){
-        hRepo.insert(habitacion);
+    public void insertRoom(Habitacion habitacion){
+        roomRepository.insert(habitacion);
     }
-    public void eliminarHabitacion(Habitacion habitacion){
-        hRepo.delete(habitacion);
+    public void deleteRoom(Habitacion habitacion){
+        roomRepository.delete(habitacion);
     }
 }

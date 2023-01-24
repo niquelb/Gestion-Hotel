@@ -10,7 +10,7 @@ import com.example.gestionhotel.data.entities.Usuario;
 
 public class UserRepository {
 
-    private UsuarioDao usuarioDao;
+    private final UsuarioDao usuarioDao;
 
     public UserRepository(Context context){
         AppDB db= AppDB.getInstance(context);
